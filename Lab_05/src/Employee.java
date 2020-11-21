@@ -25,16 +25,11 @@ public class Employee implements java.lang.Comparable {
     @Override
     public int compareTo(Object o) {
         if (o instanceof Employee) {
-            if (noOfTravelDay > ((Employee) o).noOfTravelDay) {
-                return 1;
-            } else if (noOfTravelDay == ((Employee) o).noOfTravelDay) {
-                if (noOfLeavingDay < ((Employee) o).noOfLeavingDay) {
-                    return 1;
-                } else {
-                    return 0;
-                }
+            if (noOfTravelDay - ((Employee) o).noOfTravelDay != 0) {
+                return noOfTravelDay - ((Employee) o).noOfTravelDay;
+            } else{
+                    return noOfLeavingDay < ((Employee) o).noOfLeavingDay;
             }
-            return 0;
         }
         return -1;
     }
