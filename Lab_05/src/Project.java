@@ -16,8 +16,13 @@ public class Project {
         this.startDate = startDate;
     }
 
-    public int estimateBudget() {
-        return 0;
+     public int estimateBudget() {
+        int estimateBudget = 0;
+        int all = (int)DAYS.between(startDate.toInstant(),endDate.toInstant()) * 24;
+        for(Employee a: listOfEmployee){
+           estimateBudget +=  a.getSalaryPerHour() * all;
+        }
+        return estimateBudget;
     }
 
     @Override
