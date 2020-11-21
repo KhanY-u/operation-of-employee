@@ -18,7 +18,7 @@ public class Project {
 
      public int estimateBudget() {
         int estimateBudget = 0;
-        int all = (int)DAYS.between(startDate.toInstant(),endDate.toInstant()) * 24;
+        int all = (int)DAYS.between(startDate.toInstant(),endDate.toInstant()) * 8 *5;
         for(Employee a: listOfEmployee){
            estimateBudget +=  a.getSalaryPerHour() * all;
         }
